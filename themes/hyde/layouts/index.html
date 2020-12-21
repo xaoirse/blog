@@ -1,0 +1,47 @@
+{{ define "main" -}}
+<div class="posts"style="
+padding: 2rem;
+background-color:white; 
+margin:25px 15px;
+border-radius:5px;
+background-color: #864c096e;
+position:relative;
+box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+margin-left:6%;
+border:2px dashed #F7EEEE;
+border-radius:5px;">
+<p dir="rtl">همه پست ها</p>
+
+{{$year := 0}}
+{{$month := 0}}
+{{ range .Site.RegularPages -}}
+{{if ne .Title "About"}}
+
+{{$this_month := .Date.Format "January"}}
+{{if eq $year .Date.Year}}
+	
+	{{if eq $month $this_month}}
+	{{else}}
+	<h3>{{ .Date.Format "January" }}</h3>
+	<ul>
+	{{$month = $this_month}}
+	{{end}}
+{{else}}
+	<h2>{{ .Date.Year}}</h2>
+	<h3>{{ .Date.Format "January" }}</h3>
+	<ul>
+{{$year = .Date.Year}}
+{{$month = $this_month}}
+
+{{ end }}
+
+
+  <h2 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h2>
+
+</ul>
+{{end}}
+{{- end }}
+</div>
+{{- end }}

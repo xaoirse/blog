@@ -1,0 +1,17 @@
+baseURL = "https://xaoirse.github.io/"
+languageCode = "en-us"
+title = "Million Lines Of Code"
+theme = "hyde"
+[Menus]
+  main = [
+      {Name = "Categories", URL = "/categories/"},
+      {Name = "Github", URL = "https://github.com/xaoirse/"},
+      
+  ]
+[taxonomies]
+  category = "categories"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+

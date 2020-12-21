@@ -1,0 +1,31 @@
+
+{{ define "main" -}}
+<div><h1 style="float: right" class="page-title">{{ .Title }}</h1></div>
+<br>
+<br>
+<div style="
+padding: 2rem;
+background-color:white; 
+margin:25px 15px;
+border-radius:5px;
+background-color: #864c096e;
+position:relative;
+box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  margin-left:6%;
+  border:2px dashed #F7EEEE;
+  border-radius:5px;
+  ">
+
+{{ range .Data.Pages -}}
+<h3> {{.Title}} </h3>
+  {{range .Pages}}
+  <h4>
+        <a href="{{ .Permalink }}">{{.Title}}</a>
+        <small style="float: right;"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{.Date.Format "Jan 2 2006" }}</small>
+      </h4>
+  {{end}}
+    
+  
+{{- end }}
+</div>
+{{- end }}
