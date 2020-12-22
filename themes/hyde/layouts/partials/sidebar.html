@@ -10,8 +10,12 @@
     <nav>
       <ul class="sidebar-nav">
         <li><a class="sidebar-nav-item" href="{{ .Site.BaseURL }}">Home</a> </li>
-        {{ range .Site.Menus.main -}}
-          <li><a class="sidebar-nav-item" href="{{.URL}}"> {{ .Name }} </a></li>
+        {{ range sort .Site.Menus.main "Weight" -}}
+        	{{if eq .Name "Github"}}
+        		<li><a target="_blank" class="sidebar-nav-item" href="{{.URL}}"> {{ .Name }} </a></li>
+        	{{else}}
+          		<li><a class="sidebar-nav-item" href="{{.URL}}"> {{ .Name }} </a></li>
+        	{{end}}
         {{- end }}
       </ul>
     </nav>

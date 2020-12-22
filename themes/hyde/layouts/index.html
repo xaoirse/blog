@@ -15,7 +15,7 @@ border-radius:5px;">
 {{$year := 0}}
 {{$month := 0}}
 {{ range .Site.RegularPages -}}
-{{if ne .Title "About"}}
+{{if ne .Params.menu "main"}}
 
 {{$this_month := .Date.Format "January"}}
 {{if eq $year .Date.Year}}

@@ -2,6 +2,7 @@
 layout: post
 title: About
 menu: "main"
+date: 2020-06-22
 ---
 
 <div class="message" style=" padding-bottom: 3rem;">

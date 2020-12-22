@@ -1,11 +1,11 @@
 baseURL = "https://xaoirse.github.io/"
-languageCode = "en-us"
+languageCode = ["en-us","fa-ir"]
 title = "Million Lines Of Code"
 theme = "hyde"
 [Menus]
   main = [
-      {Name = "Categories", URL = "/categories/"},
-      {Name = "Github", URL = "https://github.com/xaoirse/"},
+      {Name = "Categories", URL = "/categories/" ,weight = -1},
+      {Name = "Github", URL = "https://github.com/xaoirse/",weight = 100},
       
   ]
 [taxonomies]
